@@ -1,5 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const passport = require("passport");
+
+const root = require("./src/routes/root");
 
 const app = express();
 
@@ -14,6 +17,15 @@ mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Mongodb connected"))
   .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./src/middleware/passport")(passport);
+
+// Routes
+app.use("/api", root);
 
 const port = process.env.PORT || 6969;
 
