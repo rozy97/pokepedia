@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // DB config
-const db = require("./config/keys").mongoURI;
+const db = require("./src/config/keys").mongoURI;
 
 // connect to mongoDB
 mongoose
