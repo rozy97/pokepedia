@@ -1,11 +1,11 @@
 {
-  "name": "pokepedia",
+  "name": "mern-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "mern app login and authentication",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
@@ -13,19 +13,20 @@
   "author": "Firmansyah Rozy",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "concurrently": "^5.0.0",
+    "concurrently": "^4.1.2",
     "express": "^4.17.1",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.5",
+    "mongoose": "^5.7.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "pokedex-promise-v2": "^3.2.0",
     "validator": "^11.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.2"
   }
 }

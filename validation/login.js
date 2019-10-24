@@ -1,7 +1,7 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
-const validateLoginInput = data => {
+module.exports = validateLoginInput = data => {
   let errors = {};
 
   // Convert empty fields to an empty string so we can use validator functions
@@ -19,10 +19,9 @@ const validateLoginInput = data => {
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
+
   return {
     errors,
     isValid: isEmpty(errors)
   };
 };
-
-module.exports = validateLoginInput;
